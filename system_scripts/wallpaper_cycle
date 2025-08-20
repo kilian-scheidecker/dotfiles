@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Path to wallpapers
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+
+# Get all files in the directory
+files=("$WALLPAPER_DIR"/*)
+
+# Pick a random one
+random_wall="${files[RANDOM % ${#files[@]}]}"
+
+# Tell hyprpaper to set it
+hyprctl hyprpaper preload "$random_wall"
+hyprctl hyprpaper wallpaper ", $random_wall"

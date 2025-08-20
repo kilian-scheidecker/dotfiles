@@ -1,0 +1,100 @@
+{
+	"layer": "top",
+	"modules-left":
+        [
+            "custom/launcher",
+            "cpu",
+            "memory"
+        ],
+	"modules-center": 
+        [
+            "hyprland/workspaces"
+        ],
+	"modules-right": 
+        [
+            "backlight",
+            "pulseaudio",
+            "custom/clock",
+            "battery",
+            "network",
+            "custom/power"
+        ],
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 1,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	},
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "●",
+            "default": "●",
+            "empty": "○"
+        },
+        "persistent-workspaces": {
+            "*": [ 1,2,3,4,5 ]
+        }
+    },
+	"network": {
+		"tooltip": false,
+		"format-wifi": "  {essid}",
+		"format-ethernet": ""
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "brightnessctl -e4 -n2 set 1%+",
+	"on-scroll-down": "brightnessctl -e4 -n2 set 1%-"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/clock": {
+        "format": " {}",
+        "exec": "date +'%H:%M'",
+	"interval": 1
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/launcher":{
+        // "format": " ",      // pencil
+        "format": "",      // rocket
+        // "format": " ",      // nothing
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": " ",
+        // "font": "Symbols Nerd Font Mono",
+        "on-click": "bash ~/.config/rofi/leave/leave.sh"
+    },
+    "custom/wallpaper":{
+        "format":" ",
+        "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    }
+}

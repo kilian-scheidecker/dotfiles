@@ -1,0 +1,5 @@
+[Unit]
+Description=Cycle wallpapers with Hyprpaper
+
+[Service]
+ExecStart=%h/bin/cycle-wallpapers.sh

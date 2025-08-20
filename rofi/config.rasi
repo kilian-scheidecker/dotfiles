@@ -1,0 +1,74 @@
+configuration {
+    modi: "drun";
+    font: "Free Mono 15";
+    show-icons: true;
+    drun-display-format: "{icon} {name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    terminal: "st";
+}
+
+@theme "catppuccin"
+
+window {
+    width: 550px;
+    height: 270px;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 10px;
+    background-color: @bg-col;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    background-color: @bg-col;
+    margin: 5px;
+}
+
+inputbar {
+    children: [ entry ];
+    background-color: @bg-col;
+    margin: 5px;
+    //border: 1px solid @bg-col;
+}
+
+entry {
+    text-color: @text-col;
+    background-color: @bg-col;
+    placeholder:"🔍 Search...";
+    padding: 5px;
+    font: "Free Mono 16";
+}
+
+listview {
+    margin: 5px;
+    background-color: @transparent;
+    columns: 1;
+}
+
+element {
+    padding: 5px;
+    background-color: @transparent;
+    text-color: @text-col;
+    border-radius: 5px;
+}
+
+element selected {
+    background-color: @selected-col;
+}
+
+element-icon {
+    size: 20px;
+    background-color: @transparent;
+}
+
+element-text {
+    background-color: @transparent;
+    text-color: @text-col;
+}
+
+element-text selected {
+    background-color: @transparent;
+    text-color: @purple;
+}
