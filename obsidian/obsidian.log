@@ -1,0 +1,8 @@
+2025-08-30 22:23:38 Loading main app package /usr/lib/obsidian/obsidian.asar
+2025-08-30 22:23:38 Checking for update using Github
+2025-08-30 22:23:38 Success.
+2025-08-30 22:23:38 Latest version is 1.9.12
+2025-08-30 22:23:38 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.9.12/obsidian-1.9.12.asar.gz
+2025-08-30 22:23:39 Verifying hash & signature. Size= 9033321
+2025-08-30 22:23:39 Saving file
+2025-08-30 22:23:40 Update complete.
