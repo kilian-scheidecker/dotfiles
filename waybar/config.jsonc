@@ -3,8 +3,10 @@
 	"modules-left":
         [
             "custom/launcher",
+            "custom/updates",
             "cpu",
-            "memory"
+            "memory",
+            "custom/monitor-mode"
         ],
 	"modules-center": 
         [
@@ -14,7 +16,7 @@
         [
             "backlight",
             "pulseaudio",
-            "custom/clock",
+            "clock",
             "battery",
             "network",
             "custom/power"
@@ -43,16 +45,18 @@
         }
     },
 	"network": {
-		"tooltip": false,
+		"tooltip": true,
 		"format-wifi": "  {essid}",
-		"format-ethernet": ""
+		"format-ethernet": "  {ifname}",
+        "format-disconnected": "󰤮",
+        "on-click": "nm-connection-editor"
 	},
 	"backlight": {
-		"tooltip": false,
+        "tooltip": false,
 		"format": " {}%",
-		"interval":1,
+		// "interval":1,
         "on-scroll-up": "brightnessctl -e4 -n2 set 1%+",
-	"on-scroll-down": "brightnessctl -e4 -n2 set 1%-"
+	    "on-scroll-down": "brightnessctl -e4 -n2 set 1%-"
     },
     "battery": {
         "states": {
@@ -66,10 +70,30 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    "custom/clock": {
-        "format": " {}",
-        "exec": "date +'%H:%M'",
-	"interval": 1
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+        "mode"          : "year",
+        "mode-mon-col"  : 3,
+        "weeks-pos"     : "left",
+        // "on-scroll"     : 1,
+        "format": {
+            "months":     "<span color='#ffead3'><b>{}</b></span>",
+            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode"
+            // "on-scroll-up": "tz_up",
+            // "on-scroll-down": "tz_down",
+            // "on-scroll-up": "shift_up",
+            // "on-scroll-down": "shift_down"
+                    }
     },
     "cpu": {
         "interval": 15,
@@ -89,12 +113,34 @@
         "on-click-right": "killall rofi"
     },
     "custom/power":{
-        "format": " ",
+        "format": " ",
         // "font": "Symbols Nerd Font Mono",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh"
+        "on-click": "bash /home/kilian/.config/rofi/leave/leave.sh"
     },
-    "custom/wallpaper":{
-        "format":" ",
-        "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    "custom/updates": {
+        "format": "{} {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "󱍷",
+            "updated": "󰂪"
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
+        "on-click": "paru -Syu"
+    },
+    "custom/monitor-mode": {
+        "format": "  {}",
+        "exec": "cat /home/kilian/.config/hypr/monitors/current_mode 2>/dev/null || echo laptop",
+        "interval": 2,
+        "on-click": "/home/kilian/.config/system_scripts/set-display.sh toggle"
     }
+
+    // "custom/wallpaper":{
+    //     "format":" ",
+    //     "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    // },
+    // "custom/update":{
+    //     "format":" ",
+    //     "on-click": "sudo pacman -Syu"
+    // },
 }

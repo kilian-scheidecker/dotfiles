@@ -10,4 +10,17 @@
 #kde 
 *kde.org
 
+# logs
+.log
+.logs
 
+# Cache directories
+
+
+# Random apps I don't care about
+texstudio
+neofetch
+obisian
+nwg-displays
+keepassxc
+pulse
