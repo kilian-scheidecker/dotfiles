@@ -49,7 +49,9 @@
 		"format-wifi": "  {essid}",
 		"format-ethernet": "  {ifname}",
         "format-disconnected": "󰤮",
-        "on-click": "nm-connection-editor"
+        // "on-click": "nm-appèu_vbjibblet" //make this open the nm-appllet menu
+        // "on-click": "nm-connection-editor"
+        "on-click": "kitty"
 	},
 	"backlight": {
         "tooltip": false,

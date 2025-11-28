@@ -20,7 +20,9 @@
 # Random apps I don't care about
 texstudio
 neofetch
-obisian
+nautilus
+obisian/*
 nwg-displays
 keepassxc
 pulse
+pipewire
