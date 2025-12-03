@@ -1,21 +1,13 @@
 * {
 	border: none;
 	border-radius: 5px;
-    	font-family: "JetbrainsMono Nerd Font" ;
+	font-family: "JetbrainsMono Nerd Font" ;
 	font-size: 14px;
 	min-height: 10px;
 	margin-top: 2px;
 	margin-left: 3px;
 	margin-right: 3px;
 }
-/* * {
-	border: none;
-	border-radius: 7px;
-    	font-family: "JetbrainsMono Nerd Font" ;
-	font-size: 15px;
-	min-height: 10px;
-} */
-
 
 window#waybar {
 	background: transparent;
@@ -42,12 +34,6 @@ window#waybar.hidden {
 	margin-left: 30px;
 }
 
-/* #workspaces button {
-    all:unset;
-    padding: 0px 5px;
-    color: alpha(#bd93f9,.4);
-    transition: all .2s ease;
-} */
 #workspaces button {
     all: unset;
     padding: 0px;   /* or whatever spacing you want */
@@ -89,7 +75,22 @@ window#waybar.hidden {
 	background: #bd93f9;
 	padding-left: 8px;
 	padding-right: 8px;
-	
+}
+
+#tray {
+	transition: none;
+	color: #161320;
+	background: #bd93f9;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#bluetooth {
+	transition: none;
+	color: #161320;
+	background: #4e83ff;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 #pulseaudio {
@@ -136,8 +137,8 @@ window#waybar.hidden {
 	background: #F8BD96;
 	padding-left: 8px;
 	padding-right: 8px;
-
 }
+
 #clock {
 	transition: none;
 	color: #161320;
@@ -145,7 +146,6 @@ window#waybar.hidden {
 	/*background: #1A1826;*/
 	padding-left: 8px;
 	padding-right: 8px;
-
 }
 
 #memory {
@@ -154,7 +154,6 @@ window#waybar.hidden {
 	background: #DDB6F2;
 	padding-left: 8px;
 	padding-right: 8px;
-
 }
 
 #cpu {
@@ -164,7 +163,6 @@ window#waybar.hidden {
 	padding-left: 8px;
 	padding-right: 8px;
 }
-
 
 #custom-launcher {
 	font-size: 22px;
@@ -182,7 +180,6 @@ window#waybar.hidden {
 	/* margin-right: 6px; */
 	padding-left: 7px;
 	padding-right: 4px;
-
 }
 
 #custom-updates {
@@ -191,7 +188,6 @@ window#waybar.hidden {
 	background: #E8A2AF;
 	padding-left: 8px;
 	padding-right: 8px;
-
 }
 
 #custom-monitor-mode {
