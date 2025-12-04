@@ -80,18 +80,18 @@ window#waybar.hidden {
 #tray {
 	transition: none;
 	color: #161320;
-	background: #bd93f9;
-	padding-left: 8px;
-	padding-right: 8px;
+	background: #F8BD96;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
-#bluetooth {
+/* #bluetooth {
 	transition: none;
 	color: #161320;
 	background: #4e83ff;
 	padding-left: 8px;
 	padding-right: 8px;
-}
+} */
 
 #pulseaudio {
 	transition: none;
